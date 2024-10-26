@@ -43,6 +43,8 @@
             border-radius: 5px;
             transition: background-color 0.3s, transform 0.3s;
             animation: rotateAndShake 3s infinite;
+            position: relative;
+            z-index: 2;
         }
         .button:hover {
             background-color: #0056b3;
@@ -57,7 +59,6 @@
             transform: translate(-50%, -50%);
             height: 170px;
             width: 192.1px;
-            margin-bottom: 20px;
             animation: float 3s ease-in-out infinite;
             z-index: 1;
         }
@@ -121,10 +122,10 @@
             border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
         }
         .eye--left {
-            left: 0;
+            left: calc(50% - 45%);
         }
         .eye--right {
-            right: 0;
+            right: calc(50% - 45%);
         }
         .eye::before {
             content: '';
