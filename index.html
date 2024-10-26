@@ -12,7 +12,7 @@
         }
         body {
             font-family: Arial, sans-serif;
-            background-color: #121212;
+            background-color: #000000;
             color: #f0f0f0;
             display: flex;
             justify-content: center;
@@ -24,11 +24,14 @@
         .container {
             text-align: center;
             animation: zoomIn 1s ease-in-out forwards;
+            position: relative;
         }
         h1 {
             margin-bottom: 20px;
             color: #e0e0e0;
             animation: rainbowText 5s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
         }
         .button {
             display: inline-block;
@@ -48,18 +51,24 @@
 
         /* Cat Styling */
         .cat {
-            position: relative;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             height: 170px;
             width: 192.1px;
             margin-bottom: 20px;
             animation: float 3s ease-in-out infinite;
+            z-index: 1;
+        }
+        .ear, .face, .eye-pupil {
+            background: #000000;
         }
         .ear {
             position: absolute;
             top: -30%;
             height: 60%;
             width: 25%;
-            background: #fff;
         }
         .ear--left {
             left: -7%;
@@ -67,14 +76,19 @@
             transform: rotate(-15deg);
         }
         .ear--left::before,
-        .ear--left::after {
+        .ear--left::after,
+        .ear--right::before,
+        .ear--right::after {
             content: '';
             position: absolute;
             bottom: 24%;
             height: 10%;
             width: 5%;
             border-radius: 50%;
-            background: #161616;
+            background: #fff;
+        }
+        .ear--left::before,
+        .ear--left::after {
             right: 10%;
         }
         .ear--left::after {
@@ -87,13 +101,6 @@
         }
         .ear--right::before,
         .ear--right::after {
-            content: '';
-            position: absolute;
-            bottom: 24%;
-            height: 10%;
-            width: 5%;
-            border-radius: 50%;
-            background: #161616;
             left: 10%;
         }
         .ear--right::after {
@@ -103,7 +110,6 @@
             position: absolute;
             height: 100%;
             width: 100%;
-            background: #161616;
             border-radius: 50%;
         }
         .eye {
@@ -140,7 +146,6 @@
             top: 25%;
             height: 50%;
             width: 20%;
-            background: #161616;
             border-radius: 50%;
             animation: look-around 4s infinite;
         }
